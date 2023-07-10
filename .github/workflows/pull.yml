@@ -1,1 +1,17 @@
+name: Pull
 
+on:
+  pull_requests:
+    branches: [ master ]
+    
+env:
+  SOLUTION_FILE_PATH: .
+  
+  BUILD_CONFIGURATION: Release
+  
+permissions:
+  contents: read
+  
+jobs:
+  build:
+    runs-on: windows-latest
