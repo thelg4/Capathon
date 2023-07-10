@@ -9,6 +9,7 @@ function App() {
         <p className="font-bold">
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>some words</p>
         <a
           className="App-link"
           href="https://reactjs.org"
