@@ -2,30 +2,20 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Capathon.Models;
+namespace Capathon.Data;
 
 public partial class CapathonBroadwayContext : DbContext
 {
-    public CapathonBroadwayContext()
-    {
+    public CapathonBroadwayContext(DbContextOptions<CapathonBroadwayContext> options): base(options){
     }
 
-    public CapathonBroadwayContext(DbContextOptions<CapathonBroadwayContext> options)
-        : base(options)
-    {
-    }
+    public virtual DbSet<Appointment> Appointments => Set<Appointment>();
 
-    public virtual DbSet<Appointment> Appointments { get; set; }
+    public virtual DbSet<CareCenter> CareCenters => Set<CareCenter>();
 
-    public virtual DbSet<CareCenter> CareCenters { get; set; }
+    public virtual DbSet<Dependent> Dependents => Set<Dependent>();
 
-    public virtual DbSet<Dependent> Dependents { get; set; }
-
-    public virtual DbSet<User> Users { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=tcp:capathonbroadway.database.windows.net,1433; Database=CapathonBroadway;User ID=dbadmin;Password=Pa$$word;Trusted_Connection=False;");
+    public virtual DbSet<User> Users => Set<User>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
