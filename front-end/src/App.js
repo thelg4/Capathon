@@ -6,6 +6,7 @@ import UserCard from './components/common/UserCard';
 import { Link, BrowserRouter, Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Dependents from './pages/Dependents';
+import Locations from './pages/Locations';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dependents" element={<Dependents/>} />
-
+        <Route path='/Locations' element={<Locations />} />
         
       </Routes>
     </BrowserRouter>
