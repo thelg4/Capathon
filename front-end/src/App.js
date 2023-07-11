@@ -3,16 +3,22 @@ import './App.css';
 import SideNav from './components/common/SideNav';
 import Navbar from './components/common/Navbar';
 import UserCard from './components/common/UserCard';
+import { Link, BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Dependents from './pages/Dependents';
 
 function App() {
   return (
-    <div>
+
+    <BrowserRouter>
       <Navbar />
-      <div className="flex justify-center">
-        <UserCard />
-      </div>
-      
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dependents" element={<Dependents/>} />
+
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
 

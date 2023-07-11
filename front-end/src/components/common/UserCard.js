@@ -1,24 +1,27 @@
 import React from 'react'
 import users from "../../mockdata/users.json";
+import { Link } from 'react-router-dom';
 
 function UserCard() {
   return (
-    <div className="card w- bg-base-100 shadow-xl">
+    <div className="card w-3/4 bg-base-200 shadow-sm hover:shadow-lg pt-4">
         
-        <div className="card-body items-center text-center space-y-2">
+        <div className="card-body items-center text-center space-y-2 pt-4">
             <h2 className="card-title">Dependent Name</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <p className="font-semibold">Last Visit: </p>
+            <button className="btn btn-primary w-64">Edit</button>
             <div className="card-actions justify-end">
 
             
                 {/* You can open the modal using ID.showModal() method */}
-                <button className="btn" onClick={()=>window.my_modal_3.showModal()}>View Dependent</button>
+                
+                <button className="btn btn-info w-64" onClick={()=>window.my_modal_3.showModal()}>View Dependent</button>
                 <dialog id="my_modal_3" className="modal">
                 <form method="dialog" className="modal-box">
 
                     
 
-                    <div className="flex justify-center">
+                    <div className="flex justify-left">
                         <h3 className="text-lg font-bold pt-4">Dependent Information</h3>
                     </div>
 
@@ -32,7 +35,7 @@ function UserCard() {
                             <div className="divider" />
 
                             {/* accomodations */}
-                            <h3 className="text-lg font-bold pb-4">Accomodations</h3>
+                            <h3 className="text-lg font-bold text-left pb-4">Accomodations</h3>
 
                             
                             <div className="overflow-x-auto">
