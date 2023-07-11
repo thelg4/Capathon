@@ -1,20 +1,20 @@
-name: Main CI/CD
+name: Stage CI/CD
 
 on: 
   push:
-    branches: [ main ]
+    branches: [ stage ]
 
   pull_request:
-    branches: [ main ]
+    branches: [ stage ]
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 20.x ]
+        node-version: [20.x]
     defaults:
-      run:
-        working-directory: ./front-end
+        run:
+            working-directory: ./front-end
     
     steps:
       - uses: actions/checkout@v3
