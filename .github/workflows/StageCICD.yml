@@ -12,6 +12,9 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
+    defaults:
+        run:
+            working-directory: ./front-end
     
     steps:
       - uses: actions/checkout@v3
