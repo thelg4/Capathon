@@ -1,11 +1,11 @@
-name: Main CI/CD
+name: Stage CI/CD
 
 on: 
   push:
-    branches: [ main ]
+    branches: [ stage ]
 
   pull_request:
-    branches: [ main ]
+    branches: [ stage ]
 jobs:
   build:
     runs-on: ubuntu-latest
