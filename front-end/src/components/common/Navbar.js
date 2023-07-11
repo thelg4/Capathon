@@ -28,6 +28,9 @@ function Navbar() {
                     {/*<a>Centers</a>*/}
                     <Link to="/Locations">Locations</Link>
                 </li>
+                <li>
+                    <Link to="/Login">Login</Link>
+                </li>
             </ul>
             </div>
         </div>
