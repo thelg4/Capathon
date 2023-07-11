@@ -1,6 +1,8 @@
 global using Capathon.Models; 
 global using Microsoft.EntityFrameworkCore;
 global using Capathon.Data; 
+global using Capathon.Services.DependentService;
+global using Capathon.Dtos.Dependent;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddScoped<IDependentService, DependentService>();
 
 var app = builder.Build();
 

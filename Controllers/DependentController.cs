@@ -13,125 +13,51 @@ namespace Capathon
     [ApiController]
     public class DependentController : ControllerBase
     {
-        private readonly CapathonBroadwayContext _context;
 
-        public DependentController(CapathonBroadwayContext context)
-        {
-            _context = context;
+        private readonly IDependentService _dependentService;
+
+        public DependentController(IDependentService dependentService){
+            this._dependentService = dependentService;
         }
 
         // GET: api/Dependent
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Dependent>>> GetDependents()
+        public async Task<ActionResult<ServiceResponse<GetDependentDto>>> GetDependents()
         {
-          if (_context.Dependents == null)
-          {
-              return NotFound();
-          }
-            return await _context.Dependents.ToListAsync();
+          return Ok(await _dependentService.GetAllDependents());
         }
 
         // GET: api/Dependent/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Dependent>> GetDependent(int id)
+        public async Task<ActionResult<ServiceResponse<GetDependentDto>>> GetDependent(int id)
         {
-          if (_context.Dependents == null)
-          {
-              return NotFound();
-          }
-            var dependent = await _context.Dependents.FindAsync(id);
-
-            if (dependent == null)
-            {
-                return NotFound();
-            }
-
-            return dependent;
+           return Ok(await _dependentService.GetDependentById(id));
         }
 
         // PUT: api/Dependent/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDependent(int id, Dependent dependent)
-        {
-            if (id != dependent.DId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(dependent).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DependentExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
+        // public IActionResult PutDependent(int id, Dependent dependent)
+        // {
+        //   return 
+        // }
 
         // POST: api/Dependent
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Dependent>> PostDependent(Dependent dependent)
-        {
-          if (_context.Dependents == null)
-          {
-              return Problem("Entity set 'CapathonBroadwayContext.Dependents'  is null.");
-          }
-            _context.Dependents.Add(dependent);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (DependentExists(dependent.DId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        public async Task<ActionResult<ServiceResponse<List<GetDependentDto>>>> AddDependent(AddDependentDto newDependent)
+         {
 
-            return CreatedAtAction("GetDependent", new { id = dependent.DId }, dependent);
-        }
+                return Ok(await _dependentService.AddDependent(newDependent));
+         }
 
         // DELETE: api/Dependent/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDependent(int id)
+        public void DeleteDependent(int id)
         {
-            if (_context.Dependents == null)
-            {
-                return NotFound();
-            }
-            var dependent = await _context.Dependents.FindAsync(id);
-            if (dependent == null)
-            {
-                return NotFound();
-            }
-
-            _context.Dependents.Remove(dependent);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+           
         }
 
-        private bool DependentExists(int id)
-        {
-            return (_context.Dependents?.Any(e => e.DId == id)).GetValueOrDefault();
-        }
+      
     }
 }
