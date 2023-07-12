@@ -109,14 +109,12 @@ public partial class CapathonBroadwayContext : DbContext
             entity.Property(e => e.UId)
                 .ValueGeneratedNever()
                 .HasColumnName("u_id");
+            entity.Property(e => e.CId)
+                .HasColumnName("c_id");
             entity.Property(e => e.Address)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("address");
-            entity.Property(e => e.CareCenter)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("careCenter");
             entity.Property(e => e.DIds)
                 .IsUnicode(false)
                 .HasColumnName("d_ids");
