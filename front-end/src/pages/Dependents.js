@@ -23,10 +23,10 @@ function Dependents() {
         </div> */}
 
 
-        <div className="grid grid-flow-col">
-            {dependents.dependents.map((dependent, index) =>{
-                return <DependentCard key={index} dependent={dependent}/>
-            })}
+        <div className="grid grid-cols-3 gap-y-8 place-items-center">
+                {dependents.dependents.map((dependent, index) =>{
+                    return <DependentCard key={index} dependent={dependent}/>
+                })}
         </div>
         
 

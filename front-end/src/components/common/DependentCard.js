@@ -2,7 +2,7 @@ import React from 'react'
 
 function DependentCard({dependent}) {
   return (
-    <div className="card w-1/3 bg-base-200 shadow-xl py-4">
+    <div className="card w-3/4 bg-base-200 shadow-xl py-4">
         {/* <figure className="px-10 pt-10">
             <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
         </figure> */}
