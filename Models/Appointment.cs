@@ -5,6 +5,8 @@ namespace Capathon.Models;
 
 public partial class Appointment
 {
+    public int AId { get; set; }
+
     public DateTime? PickupTime { get; set; }
 
     public DateTime? DropoffTime { get; set; }
