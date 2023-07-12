@@ -35,27 +35,35 @@ namespace Capathon
         }
 
         // PUT: api/Dependent/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        // public IActionResult PutDependent(int id, Dependent dependent)
-        // {
-        //   return 
-        // }
+        public async Task<ActionResult<ServiceResponse<List<GetDependentDto>>>> UpdateDependent(UpdateDependentDto updateDependent)
+         {
+
+                return Ok(await _dependentService.UpdateDependent(updateDependent));
+         }
 
         // POST: api/Dependent
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<ServiceResponse<List<GetDependentDto>>>> AddDependent(AddDependentDto newDependent)
          {
+            var response = await _dependentService.AddDependent(newDependent);
 
-                return Ok(await _dependentService.AddDependent(newDependent));
+                if (response.Data == null){
+                    return NotFound(response);
+                }
+                return Ok(response);
          }
 
         // DELETE: api/Dependent/5
         [HttpDelete("{id}")]
-        public void DeleteDependent(int id)
+        public async Task<ActionResult<ServiceResponse<GetDependentDto>>> DeleteDependent(int id)
         {
-           
+           var response = await _dependentService.DeleteDependent(id);
+
+                if (response.Data == null){
+                    return NotFound(response);
+                }
+                return Ok(response);
         }
 
       

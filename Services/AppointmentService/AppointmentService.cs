@@ -1,20 +1,20 @@
 namespace Capathon.Services.AppointmentService
 {
-    public class AppointmentService : IAppointmentService
+    public class AppointmentService 
     {
-        public List<Appointment> AddAppointment(Appointment newAppointment)
+        public void AddAppointment(Appointment newAppointment)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
-        public List<Appointment> GetAllAppointments()
+        public void GetAllAppointments()
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
 
-        public Appointment GetAppointmentById(int id)
+        public void GetAppointmentById(int id)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
