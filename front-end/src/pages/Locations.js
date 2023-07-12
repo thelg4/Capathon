@@ -1,5 +1,6 @@
 import React from 'react'
 import UserCard from '../components/common/UserCard'
+import LocationCard from '../components/common/LocationCard'
 
 function Locations() {
   return (
@@ -10,8 +11,12 @@ function Locations() {
           <li><a>Dependents</a></li>
         </ul>
       </div>
-        <h1 className="font-bold text-center">Boop</h1>
-        <UserCard />
+
+
+
+       <h1 className="font-bold text-3xl text-center">Locations</h1>
+
+       <LocationCard />
     </div>
   )
 }
