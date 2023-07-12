@@ -1,11 +1,17 @@
+using Capathon.Dtos.Appointment;
+
 namespace Capathon.Services.AppointmentService
 {
     public interface IAppointmentService
     {
-        List<Appointment> GetAllAppointments();
+       Task<ServiceResponse<List<GetAppointmentDto>>> GetAllAppointments();
 
-        Appointment GetAppointmentById(int id);
+        Task<ServiceResponse<GetAppointmentDto>> GetAppointmentById(int id);
 
-        List<Appointment> AddAppointment(Appointment newAppointment);
+        Task<ServiceResponse<List<GetAppointmentDto>>> AddAppointment(AddAppointmentDto newAppointment);
+
+        Task<ServiceResponse<GetAppointmentDto>> UpdateAppointment(UpdateAppointmentDto updatedAppointment);
+
+        Task<ServiceResponse<List<GetAppointmentDto>>> DeleteAppointment(int id);
     }
 }

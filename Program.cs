@@ -3,7 +3,8 @@ global using Microsoft.EntityFrameworkCore;
 global using Capathon.Data; 
 global using Capathon.Services.DependentService;
 global using Capathon.Dtos.Dependent;
-using Capathon.Services;
+global using Capathon.Services;
+using Capathon.Services.AppointmentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IDependentService, DependentService>();
 builder.Services.AddScoped<ICareCenterService, CareCenterService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
 var app = builder.Build();
 

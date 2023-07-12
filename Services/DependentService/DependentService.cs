@@ -33,19 +33,19 @@ namespace Capathon.Services.DependentService
             var serviceResponse = new ServiceResponse<List<GetDependentDto>>();
 
             try{
-            var dependent = _dataContext.Dependents.FirstOrDefaultAsync(d => d.DId == id);
+            var dependent = await _dataContext.Dependents.FirstOrDefaultAsync(d => d.DId == id);
             if(dependent == null){
                 throw new Exception($"Dependent with ID '{id}' not found.");
             }
             
-            //_dataContext.Dependents.Remove(dependent); error here
+             _dataContext.Dependents.Remove(dependent); 
 
             await _dataContext.SaveChangesAsync(); 
 
             serviceResponse.Data = await _dataContext.Dependents.Select(d => _mapper.Map<GetDependentDto>(d)).ToListAsync();; 
 
             }
-            catch(Exception ex){
+            catch(Exception){
                 serviceResponse.Success = false;
             }
             return serviceResponse;
@@ -90,7 +90,7 @@ namespace Capathon.Services.DependentService
             serviceResponse.Data = _mapper.Map<GetDependentDto>(dependent); 
 
             }
-            catch(Exception ex){
+            catch(Exception){
                 serviceResponse.Success = false;
             }
             return serviceResponse; 
