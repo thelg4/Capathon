@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Capathon.Models;
+using Capathon.Services;
+using Capathon.Dtos.CareCenter;
 
 namespace Capathon
 {
@@ -13,125 +15,50 @@ namespace Capathon
     [ApiController]
     public class CareCenterController : ControllerBase
     {
-        private readonly CapathonBroadwayContext _context;
+        private readonly ICareCenterService _careCenterService;
 
-        public CareCenterController(CapathonBroadwayContext context)
+        public CareCenterController(ICareCenterService careCenterService)
         {
-            _context = context;
+            _careCenterService = careCenterService;
         }
 
-        // GET: api/CareCenter
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CareCenter>>> GetCareCenters()
+        public async Task<ActionResult<ServiceResponse<List<GetCareCenterDto>>>> GetCareCenters()
         {
-          if (_context.CareCenters == null)
-          {
-              return NotFound();
-          }
-            return await _context.CareCenters.ToListAsync();
+            return Ok(await _careCenterService.GetAllCareCenters());
         }
 
-        // GET: api/CareCenter/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CareCenter>> GetCareCenter(int id)
+        public async Task<ActionResult<ServiceResponse<List<GetDependentDto>>>> GetCareCenter(int id)
         {
-          if (_context.CareCenters == null)
-          {
-              return NotFound();
-          }
-            var careCenter = await _context.CareCenters.FindAsync(id);
-
-            if (careCenter == null)
-            {
-                return NotFound();
-            }
-
-            return careCenter;
+            return Ok(await _careCenterService.GetCareCenterById(id));
         }
 
-        // PUT: api/CareCenter/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCareCenter(int id, CareCenter careCenter)
-        {
-            if (id != careCenter.CId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(careCenter).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CareCenterExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/CareCenter
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CareCenter>> PostCareCenter(CareCenter careCenter)
+        public async Task<ActionResult<ServiceResponse<GetDependentDto>>> AddCareCenter(AddCareCenterDto newCareCenter)
         {
-          if (_context.CareCenters == null)
-          {
-              return Problem("Entity set 'CapathonBroadwayContext.CareCenters'  is null.");
-          }
-            _context.CareCenters.Add(careCenter);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (CareCenterExists(careCenter.CId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetCareCenter", new { id = careCenter.CId }, careCenter);
+            return Ok(await _careCenterService.AddCareCenter(newCareCenter));
         }
 
-        // DELETE: api/CareCenter/5
+        [HttpPut]
+        public async Task<ActionResult<ServiceResponse<GetDependentDto>>> UpdateCareCenter(UpdateCareCenterDto updatedCareCenter)
+        {
+            var response = await _careCenterService.UpdateCareCenter(updatedCareCenter);
+            if (response.Data is null) {
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCareCenter(int id)
+        public async Task<ActionResult<ServiceResponse<List<GetDependentDto>>>> DeleteCareCenter(int id)
         {
-            if (_context.CareCenters == null)
-            {
-                return NotFound();
+            var response = await _careCenterService.DeleteCareCenter(id);
+            if (response.Data is null) {
+                return NotFound(response);
             }
-            var careCenter = await _context.CareCenters.FindAsync(id);
-            if (careCenter == null)
-            {
-                return NotFound();
-            }
-
-            _context.CareCenters.Remove(careCenter);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool CareCenterExists(int id)
-        {
-            return (_context.CareCenters?.Any(e => e.CId == id)).GetValueOrDefault();
+            return Ok(response);
         }
     }
+
 }

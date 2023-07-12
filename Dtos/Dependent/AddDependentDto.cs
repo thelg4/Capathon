@@ -17,6 +17,6 @@ namespace Capathon.Dtos.Dependent
 
     public string? MedicalInfo { get; set; }
 
-    public virtual User UIdNavigation { get; set; } = null!;
+    // public virtual User UIdNavigation { get; set; } = null!;
     }
 }

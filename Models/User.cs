@@ -9,6 +9,8 @@ public partial class User
 
     public string? DIds { get; set; }
 
+    public int? CId { get; set; }
+
     public string? Username { get; set; }
 
     public string? Password { get; set; }
@@ -16,8 +18,6 @@ public partial class User
     public string? FirstName { get; set; }
 
     public string? LastName { get; set; }
-
-    public string? CareCenter { get; set; }
 
     public string? PhoneNumber { get; set; }
 

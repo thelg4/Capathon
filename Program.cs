@@ -3,7 +3,7 @@ global using Microsoft.EntityFrameworkCore;
 global using Capathon.Data; 
 global using Capathon.Services.DependentService;
 global using Capathon.Dtos.Dependent;
-
+using Capathon.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IDependentService, DependentService>();
+builder.Services.AddScoped<ICareCenterService, CareCenterService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
