@@ -9,6 +9,7 @@ import Dependents from './pages/Dependents';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import CardPage from './pages/card'; 
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/Profile" element={<Profile />} />
         <Route path="/dependents" element={<Dependents/>} />
         <Route path='/Locations' element={<CardPage />} />
         <Route path='/Login' element={<LoginPage />} />
