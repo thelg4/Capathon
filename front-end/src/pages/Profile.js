@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import ProfileCard from '../components/common/PofileCard';
 
 function Profile() {
   return (
     <div>
         <h1 className="font-bold text-left" style={{marginLeft: 80, marginTop: 10}}>Profile Page</h1>
-        <div className='flex'>
+        <div className='flex justify-center align-center'>
           <div className='flex-none'>
             <div className='card w-96 bg-base-100 shadow-x1' style={{marginLeft: 80}}>
               <div style={{backgroundColor:"#fcba03"}}> 
@@ -14,7 +15,7 @@ function Profile() {
                   <div className="avatar" style={{right:210, top:5}}>
                     <div className="w-24 rounded">
                       <div className='profilePic' >
-                      <img src={require("../Images/childfalling.jpg")} />
+                        <img src={require("../Images/childfalling.jpg")} />
                       </div>
                     </div>
                   </div>
@@ -29,7 +30,7 @@ function Profile() {
               </div>
             </div>
           </div>
-          <div className='flex-1' style={{background:"#03fc28"}}>
+          <div className='flex-none' style={{border:"#fc3003", width:700}}>
             <div className="flex justify-center align-center">
               <a>
                 <Link to="/dependents" className="btn btn-info">View Dependents</Link>
@@ -37,7 +38,7 @@ function Profile() {
             </div>
           </div>
         </div>
-        <div style={{height:450, background:"#03a9fc"}}></div>
+        <div className='flex justify-center align-center' style={{width:800, height:450, background:"#03a9fc"}}></div>
     </div>
   )
 }
