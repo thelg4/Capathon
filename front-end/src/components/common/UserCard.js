@@ -1,22 +1,23 @@
 import React from 'react'
 import users from "../../mockdata/users.json";
 import { Link } from 'react-router-dom';
+import UserModal from './UserModal';
 
-function UserCard() {
+function UserCard({dependent}) {
   return (
-    <div className="card w-3/4 bg-base-200 shadow-sm hover:shadow-lg pt-4">
-        
-        <div className="card-body items-center text-center space-y-2 pt-4">
-            <h2 className="card-title">Dependent Name</h2>
+    <div className="card w-1/2 bg-base-200 shadow-sm hover:shadow-lg pt-4 pl-4">
+
+            <div className="card-body items-center text-center space-y-2 pt-4">
+            <h2 className="card-title">{dependent.firstName} {dependent.lastName}</h2>
             <p className="font-semibold">Last Visit: </p>
             <button className="btn btn-primary w-64">Edit</button>
             <div className="card-actions justify-end">
 
-            
+
                 {/* You can open the modal using ID.showModal() method */}
-                
+
                 <button className="btn btn-info w-64" onClick={()=>window.my_modal_3.showModal()}>View Dependent</button>
-                <dialog id="my_modal_3" className="modal">
+                <dialog id="my_modal_1" className="modal">
                 <form method="dialog" className="modal-box">
 
                     
@@ -26,9 +27,7 @@ function UserCard() {
                     </div>
 
                     <div className="divider" />
-
-                    {users.dependents.map((dependent, index) => (
-                        <div key={index}>
+                        <div>
                             <h3 className="text-lg text-left font-bold pt-4">Dependent: {dependent.firstName} {dependent.lastName}</h3>
                             <h3 className="text-lg text-left font-bold pt-4">Care Giver: {dependent.user}</h3>
 
@@ -58,7 +57,6 @@ function UserCard() {
                             </div>
 
                         </div>
-                    ))}
 
                     
 
@@ -76,9 +74,9 @@ function UserCard() {
                     {/* <p className="py-4">Press ESC key or click on ✕ button to close</p> */}
                 </form>
                 </dialog>
-            
+
             </div>
-        </div>
+            </div>
     </div>
   )
 }
