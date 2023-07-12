@@ -31,9 +31,6 @@ function Navbar() {
                 <li>
                     <Link to="/Login">Login</Link>
                 </li>
-                <li> 
-                    <Link to="/Card"> Card</Link>
-                </li>
             </ul>
             </div>
         </div>
