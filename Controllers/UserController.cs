@@ -40,7 +40,7 @@ namespace Capathon
             return Ok(await _userService.AddUser(newUser));
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult<ServiceResponse<GetUserDto>>> UpdateUser(UpdateUserDto updatedUser)
         {
             var response = await _userService.UpdateUser(updatedUser);
