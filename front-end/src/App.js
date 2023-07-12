@@ -6,9 +6,9 @@ import UserCard from './components/common/UserCard';
 import { Link, BrowserRouter, Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Dependents from './pages/Dependents';
-import Locations from './pages/Locations';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import CardPage from './pages/card'; 
 
 function App() {
   return (
@@ -18,9 +18,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dependents" element={<Dependents/>} />
-        <Route path='/Locations' element={<Locations />} />
+        <Route path='/Locations' element={<CardPage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/Signup' element={<SignupPage />} />
+        
         
       </Routes>
     </BrowserRouter>
