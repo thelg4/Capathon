@@ -1,5 +1,5 @@
 {
-    "location": [
+    "card": [
       {
         "id": 1,
         "location": "Nashville",
@@ -7,7 +7,8 @@
         "phone": "(615) 723-4587",
         "email": "helpinghands@nashville.com",
         "centerType": "Children",
-        "isCorp": "No"
+        "isCorp": "Yes",
+        "hours": "9am-6pm"
       },
       {
         "id": 2,
@@ -15,8 +16,9 @@
         "address": "456 Elm Street, Los Angeles, CA",
         "phone": "(213) 987-6543",
         "email": "helpinghands@la.com",
-        "centerType": "Children",
-        "isCorp": "No"
+        "centerType": "Pets",
+        "isCorp": "No",
+        "hours": "8am-7pm"
       },
       {
         "id": 3,
@@ -24,8 +26,9 @@
         "address": "789 Oak Street, Chicago, IL",
         "phone": "(312) 284-5998",
         "email": "helpinghands@chicago.com",
-        "centerType": "Children",
-        "isCorp": "No"
+        "centerType": "Elderly",
+        "isCorp": "No",
+        "hours": "6am-6pm"
       }
     ]
   }

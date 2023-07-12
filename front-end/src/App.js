@@ -9,6 +9,7 @@ import Dependents from './pages/Dependents';
 import Locations from './pages/Locations';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import CardPage from './pages/card'; 
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/Locations' element={<Locations />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/Signup' element={<SignupPage />} />
+        <Route path='/Card' element={<CardPage />} />
         
       </Routes>
     </BrowserRouter>
