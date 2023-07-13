@@ -13,6 +13,20 @@
             },
             "user": "Chris Corso",
             "medicalNeeds": ["None"]
+        },
+        {
+            "id": 2, 
+            "firstName": "Sydney",
+            "lastName": "Brewer",
+            "age": 12,
+            "accomodiations":
+            {
+                "specialNeeds": "None",
+                "allergies": ["peanut", "shellfish"],
+                "diet": ["Gluten Free"]
+            },
+            "user": "Chris Corso",
+            "medicalNeeds": ["None"]
         }
     ]
 }

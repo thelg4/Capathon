@@ -9,6 +9,10 @@ import Dependents from './pages/Dependents';
 import Locations from './pages/Locations';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import EditDependent from './pages/EditDependent';
+import Profile from './pages/Profile';
+import Appointments from './pages/Appointments';
+import Chatbot from './components/common/Chatbot';
 
 function App() {
   return (
@@ -21,6 +25,9 @@ function App() {
         <Route path='/Locations' element={<Locations />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/Signup' element={<SignupPage />} />
+        <Route path='/EditDependent' element={<EditDependent />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/Appointments" element={<Appointments />} />
         
       </Routes>
     </BrowserRouter>
