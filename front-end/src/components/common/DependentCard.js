@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function DependentCard({dependent}) {
-  return (
+  
+    const [dep, setDep] = useState();
+
+    return (
+
+    
     <div className="card w-3/4 bg-base-200 shadow-xl py-4">
         {/* <figure className="px-10 pt-10">
             <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
@@ -10,6 +16,13 @@ function DependentCard({dependent}) {
             <h2 className="card-title">{dependent.firstName} {dependent.lastName}</h2>
 
             <div className="divider" />
+
+            <h1 className="font-bold">{dependent.type.toUpperCase()}</h1>
+
+            <div className="divider" />
+                <h1 className=" text-sm font-bold">Authorized Pickup</h1>
+                <p className="text-sm">{dependent.authorizedPickup}</p>
+            <div className="divider"></div>
 
             <h2 className="font-bold">Information</h2>
 
@@ -26,15 +39,15 @@ function DependentCard({dependent}) {
                         </tr>
                         <tr>
                             <th>Special Needs</th>
-                            <td>{dependent.special_needs}</td>
+                            <td>{dependent.specialNeeds ? 'Yes' : 'No'}</td>
                         </tr>
                         <tr>
                             <th>Dietary Restrictions</th>
-                            <td>{dependent.dietary_restrictions}</td>
+                            <td>{dependent.dietaryRestrictions ? 'Yes' : 'No'}</td>
                         </tr>
                         <tr>
                             <th>Allergies</th>
-                            <td>{dependent.allergies}</td>
+                            <td>{dependent.allergies ? 'Yes' : 'No'}</td>
                         </tr>
                     </thead>
                 </table>
@@ -54,7 +67,7 @@ function DependentCard({dependent}) {
             <div className="divider"/>
 
             <div className="card-actions">
-                <button className="btn btn-primary">Edit information</button>
+                <Link to='/EditDependent' className="btn btn-info">Edit Information</Link>
             </div>
         </div>
     </div>
