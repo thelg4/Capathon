@@ -25,6 +25,45 @@
             "special_needs": "false",
             "dietary_restrictions": "false",
             "allergies": "true"
+        },
+        {
+            "id": 1, 
+            "firstName": "Alex",
+            "lastName": "Ford",
+            "age": 12,
+            "gender": "male",
+            "authorized_pickup": "Sally Van Winkle",
+            "medicalInfo": "None",
+            "accomodiations": "Very Social",
+            "special_needs": "false",
+            "dietary_restrictions": "false",
+            "allergies": "true"
+        },
+        {
+            "id": 1, 
+            "firstName": "Alex",
+            "lastName": "Ford",
+            "age": 12,
+            "gender": "male",
+            "authorized_pickup": "Sally Van Winkle",
+            "medicalInfo": "None",
+            "accomodiations": "Very Social",
+            "special_needs": "false",
+            "dietary_restrictions": "false",
+            "allergies": "true"
+        },
+        {
+            "id": 1, 
+            "firstName": "Alex",
+            "lastName": "Ford",
+            "age": 12,
+            "gender": "male",
+            "authorized_pickup": "Sally Van Winkle",
+            "medicalInfo": "None",
+            "accomodiations": "Very Reserved",
+            "special_needs": "false",
+            "dietary_restrictions": "false",
+            "allergies": "true"
         }
     ]
 }

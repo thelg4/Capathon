@@ -5,33 +5,59 @@ import users from '../mockdata/users.json';
 import DependentCard from '../components/common/DependentCard';
 import dependents from '../mockdata/dependents.json';
 
+import axios from 'axios';
+import {
+    useState, 
+    useEffect
+} from 'react';
+
+
 function Dependents() {
-  return (
-    <div>
 
-        <h1 className="text-3xl text-center font-bold py-6">Dependents</h1>
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get('https://capathonbroadway-api.azurewebsites.net/User/dependent-lookup/6')
+        .then(response =>   {
+            console.log(response.data);
+            setData(response.data.data);
+        })
+        .catch (error =>    {
+            console.error('There was an error retreiving the dependent', error);
+        });
+        // fetch('https://capathonbroadway-api.azurewebsites.net/User/dependent-lookup/6')
+        // .then(response => response.json())
+        // .then(j8sonData =>   {
+        //     setData(jsonData.data);
+        // })
+        // .catch(error => {
+        //     console.error('There was an error', error)
+        // });
+    }, []);
 
 
-        {/* <div className="mt-3 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {users.dependents.length ?
-                users.dependents.map((dependent, index) =>  {
-                    return (
-                        <UserCard key={index} dependent={dependent}></UserCard>
-                    )
-                })
-            : <p>No Dependents Yet</p>}
-        </div> */}
-
-
-        <div className="grid grid-flow-col">
-            {dependents.dependents.map((dependent, index) =>{
-                return <DependentCard key={index} dependent={dependent}/>
-            })}
+  if (data.length > 0) {
+    return (
+        <div>
+    
+            <h1 className="text-3xl text-center font-bold py-6">Dependents</h1>
+    
+            <div className="grid grid-cols-3 gap-y-8 place-items-center">
+                    {data.map((item, index) =>{
+                        return <DependentCard key={index} dependent={item}/>
+                    })}
+            </div>
+            
+    
         </div>
-        
+      )
+  } else    {
+    return (
+        <h3>No Data Yet</h3>
+    )
+  }
 
-    </div>
-  )
+  
 }
 
 export default Dependents

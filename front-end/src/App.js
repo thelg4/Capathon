@@ -8,6 +8,9 @@ import HomePage from './pages/HomePage';
 import Dependents from './pages/Dependents';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import EditDependent from './pages/EditDependent';
+import Profile from './pages/Profile';
+import Chatbot from './components/common/Chatbot';
 import CardPage from './pages/card'; 
 import Profile from './pages/Profile';
 import AppointmentsPage from './pages/appointments';
@@ -24,6 +27,8 @@ function App() {
         <Route path='/Locations' element={<CardPage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/Signup' element={<SignupPage />} />
+        <Route path='/EditDependent' element={<EditDependent />} />
+        <Route path="/Profile" element={<Profile />} />
         <Route path='/Appointments' element={<AppointmentsPage />} />
         
         
