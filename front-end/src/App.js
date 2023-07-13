@@ -13,6 +13,7 @@ import Profile from './pages/Profile';
 import Chatbot from './components/common/Chatbot';
 import CardPage from './pages/card'; 
 import AppointmentsPage from './pages/appointments';
+import VirtualPage from './pages/vr';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/EditDependent' element={<EditDependent />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path='/Appointments' element={<AppointmentsPage />} />
+        <Route path='/vr' element={<VirtualPage />} />
         
         
       </Routes>
