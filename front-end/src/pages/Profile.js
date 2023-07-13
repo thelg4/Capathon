@@ -57,7 +57,7 @@ function Profile() {
         
             <div className="card-body">
                 <h2 className="card-title">Appointments</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p>Appointments here</p>
                 <div className="card-actions justify-end flex justify-center">
                     {/* <button className="btn btn-info">Buy Now</button> */}
                 </div>
@@ -123,7 +123,7 @@ function Profile() {
                 <div className="divier" />
 
                 <div className="card-actions flex justify-center">
-                    <button className="btn btn-info">Buy Now</button>
+                    <button className="btn btn-info w-1/4">Edit Profile</button>
                 </div>
             </div>
         </div>
@@ -132,9 +132,9 @@ function Profile() {
         
             <div className="card-body">
                 <h2 className="card-title">Dependents</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p></p>
                 <div className="card-actions justify-end flex justify-center">
-                    <Link to="/dependents" className="btn btn-info">See Dependents</Link>
+                    <Link to="/dependents" className="btn btn-info w-1/4">See Dependents</Link>
                 </div>
             </div>
         </div>
@@ -143,9 +143,9 @@ function Profile() {
         
             <div className="card-body">
                 <h2 className="card-title">Appointments</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p></p>
                 <div className="card-actions justify-end flex justify-center">
-                    <button className="btn btn-info">Buy Now</button>
+                    <button className="btn btn-info w-1/4">See Appointments</button>
                 </div>
             </div>
         </div>

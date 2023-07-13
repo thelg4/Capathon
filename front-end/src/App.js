@@ -3,7 +3,7 @@ import './App.css';
 import SideNav from './components/common/SideNav';
 import Navbar from './components/common/Navbar';
 import UserCard from './components/common/UserCard';
-import { Link, BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import { Link, BrowserRouter, Router, IndexRoute, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Dependents from './pages/Dependents';
 import LoginPage from './pages/LoginPage';
@@ -15,6 +15,8 @@ import CardPage from './pages/card';
 import AppointmentsPage from './pages/appointments';
 
 function App() {
+
+
   return (
 
     <BrowserRouter>
