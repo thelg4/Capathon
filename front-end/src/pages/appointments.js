@@ -13,10 +13,12 @@ function InteractiveCalendar() {
     dropoffTime: '',
     centerId: '',
     driverId: '',
+    userId: '',
   });
   const [displayedMonth, setDisplayedMonth] = useState(currentMonth);
   const [displayedYear, setDisplayedYear] = useState(currentYear);
   const [validationError, setValidationError] = useState(false);
+  const [repeatWeekly, setRepeatWeekly] = useState(false);
 
   const handleSelectDate = (day) => {
     setSelectedDate(day);
@@ -27,6 +29,9 @@ function InteractiveCalendar() {
       // Perform the desired action with the appointment data
       // Here, we'll just log the appointment to the console
       console.log('Appointment:', appointment);
+      if (repeatWeekly) {
+        console.log('Repeat weekly:', repeatWeekly);
+      }
     } else {
       setValidationError(true);
     }
@@ -37,7 +42,8 @@ function InteractiveCalendar() {
       appointment.pickupTime.trim() !== '' &&
       appointment.dropoffTime.trim() !== '' &&
       appointment.centerId.trim() !== '' &&
-      appointment.driverId.trim() !== '' 
+      appointment.driverId.trim() !== '' &&
+      appointment.userId.trim() !== ''
     );
   };
 
@@ -90,7 +96,7 @@ function InteractiveCalendar() {
 
   return (
     <div className="calendar">
-      <h1 className="calendar-title">Appointment Calendar</h1>
+      <h1 className="calendar-title">Interactive Calendar</h1>
       <div className="calendar-controls">
         <button className="calendar-nav-button" onClick={handlePreviousMonth}>
           &lt;
@@ -153,7 +159,7 @@ function InteractiveCalendar() {
               />
             </div>
             <div className="form-field">
-              <label>Center Location:</label>
+              <label>Center ID:</label>
               <input
                 type="text"
                 value={appointment.centerId}
@@ -163,7 +169,7 @@ function InteractiveCalendar() {
               />
             </div>
             <div className="form-field">
-              <label>Dependent: </label>
+              <label>Driver ID:</label>
               <input
                 type="text"
                 value={appointment.driverId}
@@ -172,7 +178,26 @@ function InteractiveCalendar() {
                 }
               />
             </div>
-            
+            <div className="form-field">
+              <label>User ID:</label>
+              <input
+                type="text"
+                value={appointment.userId}
+                onChange={(e) =>
+                  setAppointment({ ...appointment, userId: e.target.value })
+                }
+              />
+            </div>
+            <div className="form-field">
+              <label>
+                Repeat Weekly:
+                <input
+                  type="checkbox"
+                  checked={repeatWeekly}
+                  onChange={() => setRepeatWeekly(!repeatWeekly)}
+                />
+              </label>
+            </div>
           </div>
           <button onClick={handleMakeAppointment} className="form-button">
             Make Appointment
