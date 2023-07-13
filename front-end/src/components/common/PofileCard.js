@@ -4,12 +4,12 @@ function ProfileCard() {
     return (
         <div className='card w-96 bg-base-100 shadow-x1' style={{marginLeft: 80}}>
             <div> 
-            <figure><img src={require("../../images/childfalling.jpg")} className="blur-sm"/>
+            <figure><img src={require("./../../images/childfalling.jpg")} alt='falling child' className="blur-sm"/>
                 <div className="avatar" style={{right:210, top:5}}>
                     <div className="w-24 rounded-md">
-                        <div className='profilePic' >
-                            <img src={require("../../images/childfalling.jpg")} />
-                        </div>
+                        <div className='profilePic'>
+                            <img src={require("../../images/childfalling.jpg")} alt="also a falling child"/>
+                        </div>s
                     </div>
                 </div>
             </figure>
