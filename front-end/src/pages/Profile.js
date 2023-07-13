@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import ProfileCard from '../components/common/PofileCard';
-import Calendar from '../components/common/Calendar';
 import User from '../mockdata/users.json'
 
 function Profile() {
