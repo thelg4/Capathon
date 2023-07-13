@@ -29,19 +29,23 @@ namespace Capathon
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ServiceResponse<List<GetDependentDto>>>> GetCareCenter(int id)
+        public async Task<ActionResult<ServiceResponse<GetCareCenterDto>>> GetCareCenter(int id)
         {
             return Ok(await _careCenterService.GetCareCenterById(id));
         }
 
         [HttpPost]
-        public async Task<ActionResult<ServiceResponse<GetDependentDto>>> AddCareCenter(AddCareCenterDto newCareCenter)
+        public async Task<ActionResult<ServiceResponse<List<GetCareCenterDto>>>> AddCareCenter(AddCareCenterDto newCareCenter)
         {
-            return Ok(await _careCenterService.AddCareCenter(newCareCenter));
+            var response = await _careCenterService.AddCareCenter(newCareCenter);
+            if (response.Data is null) {
+                return NotFound(response);
+            }
+            return Ok(response);
         }
 
-        [HttpPut]
-        public async Task<ActionResult<ServiceResponse<GetDependentDto>>> UpdateCareCenter(UpdateCareCenterDto updatedCareCenter)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ServiceResponse<GetCareCenterDto>>> UpdateCareCenter(UpdateCareCenterDto updatedCareCenter)
         {
             var response = await _careCenterService.UpdateCareCenter(updatedCareCenter);
             if (response.Data is null) {
@@ -51,7 +55,7 @@ namespace Capathon
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ServiceResponse<List<GetDependentDto>>>> DeleteCareCenter(int id)
+        public async Task<ActionResult<ServiceResponse<List<GetCareCenterDto>>>> DeleteCareCenter(int id)
         {
             var response = await _careCenterService.DeleteCareCenter(id);
             if (response.Data is null) {

@@ -6,13 +6,14 @@ import UserCard from './components/common/UserCard';
 import { Link, BrowserRouter, Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Dependents from './pages/Dependents';
-import Locations from './pages/Locations';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import EditDependent from './pages/EditDependent';
 import Profile from './pages/Profile';
-import Appointments from './pages/Appointments';
 import Chatbot from './components/common/Chatbot';
+import CardPage from './pages/card'; 
+import Profile from './pages/Profile';
+import AppointmentsPage from './pages/appointments';
 
 function App() {
   return (
@@ -21,13 +22,15 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/Profile" element={<Profile />} />
         <Route path="/dependents" element={<Dependents/>} />
-        <Route path='/Locations' element={<Locations />} />
+        <Route path='/Locations' element={<CardPage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/Signup' element={<SignupPage />} />
         <Route path='/EditDependent' element={<EditDependent />} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="/Appointments" element={<Appointments />} />
+        <Route path='/Appointments' element={<AppointmentsPage />} />
+        
         
       </Routes>
     </BrowserRouter>
