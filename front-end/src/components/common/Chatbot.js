@@ -12,6 +12,10 @@ function Chatbot() {
   return (
     
     <div>
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 195d9104f6b66fa8c8753de52c4cafd4f5907be8
         <ChatBot
             steps={[
             {
