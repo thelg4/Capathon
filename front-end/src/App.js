@@ -12,7 +12,6 @@ import EditDependent from './pages/EditDependent';
 import Profile from './pages/Profile';
 import Chatbot from './components/common/Chatbot';
 import CardPage from './pages/card'; 
-import Profile from './pages/Profile';
 import AppointmentsPage from './pages/appointments';
 
 function App() {
