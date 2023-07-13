@@ -44,6 +44,51 @@
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rbga(0,0,0,0.12), 0 1px 5px 0 rbga(0,0,0,0.2);
   transition: box-shadow 0.56s ease-in-out;
 }
+.calendar {
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-header {
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.calendar-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-day:hover {
+  background-color: #e2e2e2;
+}
+
+.calendar-day.selected {
+  background-color: #b2b2b2;
+  color: #fff;
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+}
+
 
 /* .profileRow {
   display:flex;
