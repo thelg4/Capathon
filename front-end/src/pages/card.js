@@ -19,15 +19,12 @@ function CreateCard() {
   };
 
   const getImageUrl = (location) => {
-    // Define the image URLs for each location
-    const imageUrls = {
-      Nashville: 'https://example.com/nashville-image.jpg',
-      'Los Angeles': 'https://example.com/los-angeles-image.jpg',
-      Chicago: 'https://example.com/chicago-image.jpg',
-      // Add more locations and image URLs as needed
-    };
+    const imageFolder = '../Images/'; // Update the folder path where your uploaded images are stored
+    const imageExtension = '.jpg'; // Update the image extension according to your uploaded images
 
-    return imageUrls[location];
+    // Assuming the image filename or path is stored in the 'image' property of the location data
+    const imageUrl = imageFolder + location.location + imageExtension;
+    return imageUrl;
   };
 
   return (
@@ -42,8 +39,8 @@ function CreateCard() {
             minWidth: showDetails[location.location] ? 'auto' : '300px',
           }}
         >
-          <div className="card-image">
-            <img src={getImageUrl(location.location)} alt={location.location} />
+          <div className="card-image flex max-h-[250px] justify-center">
+            <img className='flex max-h-[250px] justify-center' src={location.imageLocation} alt={location.location}/>
           </div>
           <div className="card-body">
             {showDetails[location.location] && (
@@ -61,6 +58,7 @@ function CreateCard() {
             )}
 
             <h2 className="card-title">{location.location} Center</h2>
+
 
             {location.location === 'Nashville' && showDetails[location.location] && (
               <div className="google-maps">

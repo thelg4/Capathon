@@ -1,0 +1,11 @@
+{
+"appointments": [
+    {
+      "a_id": 1,
+      "pickup_time": "6:30am",
+      "dropoff_time": "7:30am",
+      "c_id": "Nashville Center",
+      "d_id": "John Smith"
+    }
+    ]
+    }
