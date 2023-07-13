@@ -12,7 +12,7 @@ function Chatbot() {
   return (
     
     <div>
-        <h1>Chatbot is here</h1>
+        
         <ChatBot
             steps={[
             {

@@ -95,8 +95,8 @@ function InteractiveCalendar() {
   }
 
   return (
-    <div className="calendar">
-      <h1 className="calendar-title">Interactive Calendar</h1>
+    <div className="calendar py-6">
+      <h1 className="calendar-title">Appointment Calendar</h1>
       <div className="calendar-controls">
         <button className="calendar-nav-button" onClick={handlePreviousMonth}>
           &lt;
