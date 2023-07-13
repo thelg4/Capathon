@@ -1,32 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import ProfileCard from '../components/common/PofileCard';
-import User from '../mockdata/users.json'
+import axios from 'axios';
+
 
 function Profile() {
   return (
-    <div>
-        <h1 className="font-bold text-left" style={{marginLeft: 80, marginTop: 10}}>Profile Page</h1>
-        <div className='flex justify-center align-center'>
-          <div className='flex-none'>
-           <ProfileCard />
-          </div>
-          <div className='flex-none' style={{width:300}}>
-            <div className="flex justify-center align-center" style={{marginTop:80}}>
-              <a>
-                <Link to="/dependents" className="btn btn-info">View Dependents</Link>
-              </a>
+    <div className="flex flex-col justify-center">
+        <h1 className="font-bold py-10">Profile Page</h1>
+
+        <div className="card w-96 bg-base-100 shadow-xl">
+        
+            <div className="card-body">
+                <h2 className="card-title">Shoes!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div className="card-actions justify-end flex justify-center">
+                    <button className="btn btn-primary">Buy Now</button>
+                </div>
             </div>
-          </div>
         </div>
-        <div className='flex justify-left text-left' style={{marginLeft:660}}>
-          <div>
-            <h2>User Information</h2>
-            <p>Email: oppagangnamstyle@gmail.com</p>
-            <p></p>
-            <p>Age: 69</p>
-            <p>Location: In Your walls</p>
-          </div>
+
+        <div className="card w-96 bg-base-100 shadow-xl">
+        
+            <div className="card-body">
+                <h2 className="card-title">Shoes!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div className="card-actions justify-end flex justify-center">
+                    <button className="btn btn-primary">Buy Now</button>
+                </div>
+            </div>
         </div>
     </div>
   )
