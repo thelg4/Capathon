@@ -56,7 +56,7 @@ function DependentCard({dependent}) {
             <div className="divider"/>
             <div>
                 <h1 className="font-bold pb-2">Accomodiations</h1>
-                <p className="text-xs font-bold">{dependent.accomodiations}</p>
+                <p className="text-xs font-bold">{dependent.accomodations}</p>
             </div>
 
             <div className="divider"/>
