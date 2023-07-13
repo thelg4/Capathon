@@ -3,8 +3,8 @@ import React from 'react';
 function vrPage() {
   return (
     <div>
-      <h1>My page title</h1>
-      <h2>My awesome 360 photo:</h2>
+      <h1 className="text-center font-bold text-3xl pt-6">Our Centers</h1>
+      <h2></h2>
       <iframe
         width="90%"
         height="500px"

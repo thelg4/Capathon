@@ -31,9 +31,9 @@ function Navbar() {
                 <li>
                     <Link to="/Appointments">Appointments</Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to="/Login">Login</Link>
-                </li>
+                </li> */}
                 <li>
                     <Link to="/vr">Virtual View</Link>
                 </li>
