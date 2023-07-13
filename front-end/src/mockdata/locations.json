@@ -8,7 +8,8 @@
         "email": "helpinghands@nashville.com",
         "centerType": "Children",
         "isCorp": "Yes",
-        "hours": "9am-6pm"
+        "hours": "9am-6pm",
+        "imageLocation": "https://i0.wp.com/hechingerreport.org/wp-content/uploads/2022/03/Mader-Early-Workforce7-scaled.jpg?fit=1200%2C800&ssl=1"
       },
       {
         "id": 2,
@@ -18,17 +19,19 @@
         "email": "helpinghands@la.com",
         "centerType": "Pets",
         "isCorp": "No",
-        "hours": "8am-7pm"
+        "hours": "8am-7pm",
+        "imageLocation": "https://www.roomforpawspetresort.com/wp-content/uploads/2021/08/day-care.jpg"
       },
       {
         "id": 3,
         "location": "Chicago",
-        "address": "789 Oak Street, Chicago, IL",
+        "address": "789 Lewisburg Street, Chicago, IL",
         "phone": "(312) 284-5998",
         "email": "helpinghands@chicago.com",
         "centerType": "Elderly",
         "isCorp": "No",
-        "hours": "6am-6pm"
+        "hours": "6am-6pm",
+        "imageLocation": "https://cf.ltkcdn.net/seniors/images/std/214166-800x634r1-seniorscards.jpg"
       }
     ]
   }
