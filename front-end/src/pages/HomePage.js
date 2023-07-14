@@ -14,7 +14,7 @@ function HomePage() {
       <div className="flex justify-center pb-10">
         <div className="card w-4/5 bg-base-100 shadow-xl rounded-xl">
             <figure className="px-10 pt-10">
-                <img src="https://2716595.fs1.hubspotusercontent-na1.net/hubfs/2716595/how-to-start-a-daycare-in-nevada_11zon.jpg" alt="Shoes" className="rounded-xl blur-sm" />
+                <img src={require("../Images/newlogo.png")} alt="Shoes" className="rounded-xl" />
             </figure>
             {/* <div className='bg-black/10 absolute top-0 left-0 w-full h-screen' />
             <div className='absolute text-2xl md:text-7xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
@@ -22,9 +22,9 @@ function HomePage() {
             </div> */}
             
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                <div className="rounded px-3 py-2 bg-blue bg-opacity-60">
+                {/* <div className="rounded px-3 py-2 bg-blue bg-opacity-60">
                     <p className="text-white text-2xl font-bold">Helping Hands Care Centers</p>
-                </div>
+                </div> */}
                 
             </div>
         </div>
