@@ -1,10 +1,10 @@
 import React from 'react'
 
-function LocationCard(location) {
+function LocationCard({location}) {
   return (
     <div className="card w-96 bg-base-200 shadow-xl pl-10">
         <div className="card-body items-center text-center">
-            <h2 className="card-title">Location Name</h2>
+            <h2 className="card-title">{location.centerName}</h2>
 
             <div className="overflow-x-auto">
                 <table className="w-full">
