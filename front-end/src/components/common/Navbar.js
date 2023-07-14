@@ -38,12 +38,12 @@ function Navbar() {
                     <Link to="/vr">Virtual View</Link>
                 </li>
             </ul>
-            </div>
-        </div>
-        <div className="navbar-center">
             <a className="btn btn-ghost normal-case text-xl font-bold">
                 <Link to="/">Helping Hand Care Centers</Link>
             </a>
+            </div>
+        </div>
+        <div className="navbar-center">
         </div>
         <div className="navbar-end">
             <Link to="/profile" className="btn btn-circle">
