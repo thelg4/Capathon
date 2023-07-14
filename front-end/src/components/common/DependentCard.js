@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { 
+    Link,
+    useLocation 
+ } from 'react-router-dom'
 
 function DependentCard({dependent}) {
   
@@ -67,7 +70,7 @@ function DependentCard({dependent}) {
             <div className="divider"/>
 
             <div className="card-actions">
-                <Link to='/EditDependent' className="btn btn-info">Edit Information</Link>
+                <Link to={{pathname: '/EditDependent', state: { detail: dependent}}} className="btn btn-info">Edit Information</Link>
             </div>
         </div>
     </div>
