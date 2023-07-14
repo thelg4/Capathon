@@ -3,7 +3,7 @@ import './App.css';
 import SideNav from './components/common/SideNav';
 import Navbar from './components/common/Navbar';
 import UserCard from './components/common/UserCard';
-import { Link, BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import { Link, BrowserRouter, Router, IndexRoute, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Dependents from './pages/Dependents';
 import LoginPage from './pages/LoginPage';
@@ -12,10 +12,12 @@ import EditDependent from './pages/EditDependent';
 import Profile from './pages/Profile';
 import Chatbot from './components/common/Chatbot';
 import CardPage from './pages/card'; 
-import Profile from './pages/Profile';
 import AppointmentsPage from './pages/appointments';
+import VirtualPage from './pages/vr';
 
 function App() {
+
+
   return (
 
     <BrowserRouter>
@@ -30,6 +32,7 @@ function App() {
         <Route path='/EditDependent' element={<EditDependent />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path='/Appointments' element={<AppointmentsPage />} />
+        <Route path='/vr' element={<VirtualPage />} />
         
         
       </Routes>
